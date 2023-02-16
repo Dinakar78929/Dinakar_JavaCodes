@@ -1,6 +1,6 @@
 package com.xworkz.inheritance.data;
 
-public class Device {
+public class Device  {
 
 
 public Device()

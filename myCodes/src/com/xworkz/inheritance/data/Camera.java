@@ -1,6 +1,6 @@
 package com.xworkz.inheritance.data;
 
-public class Camera extends Device {
+public class Camera extends Device  {
 
 private String name;
 

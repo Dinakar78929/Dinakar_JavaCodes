@@ -11,17 +11,19 @@ public class CameraRunner {
 		Device device=new Device();
 		device.camDevice();
 		
-		Camera camera2=new Camera("Sony");
-		String cam=camera2.getName();
-		System.out.println("Camera name is:"+cam);
-		
-		Camera cam1=(Camera)device;
-		cam1.capture("sony");
-		
-		
-		
-		
-		
-		}
-
+		 Device device1=new Camera();
+		 if(device1 instanceof Camera ) {
+				Camera cam1=(Camera)device1;
+				cam1.camDevice();	
+				}
+				else
+				{
+					System.out.println("divice is exception");
+				}
+		 
+		 Camera camera2=new Camera("Sony");
+		 String cam=camera2.getName();
+		 System.out.println("Camera name is:"+cam);
+	}
 }
+		

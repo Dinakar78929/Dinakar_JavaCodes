@@ -13,7 +13,7 @@ public class Xworkz extends Institute {
 	}
 	public Xworkz(String owner,long contact)
 	{
-		super("Xworkz");
+		super("xworkz");
 		System.out.println("Institute name:"+owner);
 		System.out.println("contact number:"+contact);
 	}
@@ -31,4 +31,8 @@ public class Xworkz extends Institute {
 		System.out.println("no of trainee:"+trainer);
 		System.out.println("fee:"+fee);
 		}
+	public void setMethods()
+	{
+		System.out.println("-------------");
+	}
 	}
