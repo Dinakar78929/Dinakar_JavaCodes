@@ -32,7 +32,7 @@ public class Fish {
 			System.out.println("Object is not null");
 			if(obj instanceof Fish)
 			{
-				System.out.println("Object is a Fish Type,can compare");
+				System.out.println("Object is a Fish Type,can compare"+obj);
 				Fish casted=(Fish)obj;
 				Fish fish1=this;
 				Fish fish2=casted;
@@ -42,6 +42,7 @@ public class Fish {
 						&&fish1.alive==(fish2.alive))
 				{
 					System.out.println("Fish properties are same");
+					return true;
 				}
 				else
 				{

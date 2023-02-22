@@ -55,6 +55,7 @@ public class Fridge {
 						&&fridge1.minTemp.equals(fridge2.minTemp)&&fridge1.noOfDoors==(fridge2.noOfDoors)
 								&&fridge1.noOfSelf==(fridge2.noOfSelf)&&fridge1.freezerZone==(fridge2.freezerZone)){
 					System.out.println("Fridge properties are same ");
+					return true;
 				}
 			
 		
