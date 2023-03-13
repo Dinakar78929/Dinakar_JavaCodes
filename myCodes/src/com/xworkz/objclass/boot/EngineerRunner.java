@@ -1,5 +1,6 @@
 package com.xworkz.objclass.boot;
 import com.xworkz.objclass.data.Engineer;
+
 import com.xworkz.objclass.data.Doctor;
 
 
@@ -17,9 +18,6 @@ public class EngineerRunner {
 		Engineer eng4=new Engineer(102,"Krishna");
 		
 		
-		
-		
-		
 		System.out.println("1");
 		boolean equal=eng1.equals(eng2);
 		System.out.println(equal);
@@ -34,12 +32,11 @@ public class EngineerRunner {
 		boolean equal3=eng1.equals(eng4);
 		System.out.println(equal3);
 		
-		Doctor doc1=new Doctor("eye specialist", "Kaashi");
-		Doctor doc2=new Doctor("eye specialist", "Kaashi");
-		Doctor doc3=new Doctor("skin specialist", "Shashris");
-		
+		Doctor doc1=new Doctor(123,"Shrinivas",35,"shrini@gmail.com","eye specialist", "Kaashi");
+		Doctor doc2=new Doctor(456,"Dhanu",35,"dhanu@gmail.com","skin specialist", "jhon");
+		Doctor doc3=new Doctor(123,"Shrinivas",35,"shrini@gmail.com","eye specialist", "Kaashi");
 		System.out.println("4");
-		boolean equal4=doc1.equals(doc3);
+		boolean equal4=doc1.equals(doc2);
 		System.out.println(equal4);
 		System.out.println("hashcode="+doc1.hashCode()+" "+"Original hashCode"+  System.identityHashCode(doc1));
 		
