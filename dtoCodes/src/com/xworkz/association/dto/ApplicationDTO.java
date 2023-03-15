@@ -1,8 +1,10 @@
 package com.xworkz.association.dto;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class ApplicationDTO {
+public class ApplicationDTO implements Serializable{
+//	 boolean validAndThenSave( dto);
 	private String name;
 	private double version;
 	private String developedBy;

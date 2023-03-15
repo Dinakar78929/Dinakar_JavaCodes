@@ -10,7 +10,7 @@ public class ApplicationDTORunner {
 		application.setSize(200);
 		application.setVersion(2.6);
 		application.setDevelopedBy("Darshan");
-//		application.setCreatedDate(2010-6-1);
+		application.setCreatedDate(LocalDate.of(2010,6,1));
 		
 		
 		System.out.println(application.equals((application)));
