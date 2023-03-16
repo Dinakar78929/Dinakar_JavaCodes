@@ -1,8 +1,7 @@
-package com.xworkz.asssociation.service;
+package com.xworkz.association.service;
 
 import com.xworkz.association.dto.ApplicationDTO;
 
 public interface ApplicationService {
-	boolean validAndThenSave(ApplicationDTO dto);
-
+	boolean validateAndThenSave(ApplicationDTO dto);
 }
