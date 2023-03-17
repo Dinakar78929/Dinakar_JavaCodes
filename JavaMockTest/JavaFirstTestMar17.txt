@@ -1,0 +1,224 @@
+1.Java Components?
+	1.JDK
+	2.JRE
+	3.JVM
+	->JDK:JAVA DEVELOPMENT KIT
+		->jdk=jre+jvm
+		->jdk is platform dependent
+	->JRE:JAVA RUNTIME ENVIRONMENT
+		->jre=jvm+set of libraries
+		->jre is also platform dependent
+	->JVM:JAVA VIRTUAL MACHINE
+		->platform dependent
+		1.loades the code
+		2.check the code
+		3.excecute the code
+		4.Provide runtime environment
+	
+	
+		
+		
+2.Java Features?
+	*Simple->java is simple to understand and learn,as compared to other language.
+	*Portable->java bytecode is portable.
+	*Platform independent->Because of portable in nature java is platform independent,compile once and run in any os.
+	*Secure->java is highly secure,because in java we need to ceate object to use the class and its function.
+	*Robust-
+	*Object oriented->In java we need to ceate object of that class  to use the class and its function.
+	 
+3.Constructor and types?
+	Constructor is a copy of class,its is ceated to initialize the class variables.
+	Constructor name should be same as class name.
+	*Types:
+		1.Parameterized Constructor
+				Syntax:
+						access specifier ClassName()
+				eg:
+					class Color(){
+					public int name;
+					
+						public Color()
+						{
+						
+						}
+					}
+						
+						
+		2.NON-Parameterized Constructor
+				Syntax:
+						access specifier ClassName(Parameter)
+				eg:
+					class Color(){
+					public int name;
+					
+						public Color(int name)
+						{
+							this.name=name;
+						}
+					}
+					
+4.Variables and its Types?
+	Variable is a combination of datatypes,identifiers,semicolon,and optional literals.
+	
+		declaration:
+			syntax:
+					dataType Identifiers=literals;
+	
+	*Types	
+	1.Class level variable
+		a.static variable->static variables are declared by using static keyword.
+		
+		Syntax:
+				static int var_name;
+		b.instanc variable->this variable is declared as non-static variable. All non-static variable are instance variable
+				Syntax:
+					int var_name;
+				
+	2.Method level Variable
+		a.local variable->variable which are declared inside the variables are called mlocal variable.
+							local variables are must be initialize before it is used.
+							Syntax:
+							class className{
+							
+							public void method()
+								{
+									int var_name;
+								}
+							}
+							
+5.Why java is not pure object oriented programing language?
+		->Because in java if we declare class properties and members as a static then we dont need to creat a object for that class to access the  properties and members.
+		->Java supports all primitive datatypes.
+		
+7.Explain OOP's Concept?
+	->fullform:Object Oriented Program.
+	->Principles:
+				1.Polymorphism
+				2.inheritance
+				3.Encapsulation
+				4.Abstraction
+				
+				->Polymorphism:
+					->poly:many morpha:forms
+						In a class it has many forms is called polymorphism.
+						*types:
+						a.Overloading->In a class the multiple methods/constructor  having same name and different parameters is called as Overloading.
+						->Overloading is compileTime Polymorphism
+						*types:
+							1.Construtor Overloading
+							2.Method overloading
+						sysntax:
+							access returnType method_name(String);
+							access returnType method_name(String,int);
+						eg:
+							class className
+							{
+								public void name(String nm)
+								{
+								return 0;
+								}
+								public void name(String nm,int val)
+								{
+								return null;
+								}
+								
+							}
+						b.Overriding
+							In a class the multiple methods/constructor  having same name and same parameters is called as Overriding.
+							
+							->Overriding is RunTime Polymorphism
+							
+							syntax:
+								acess returnType method_name(String)
+								acess returnType method_name(String)
+							eg:
+							class ClassName{
+							public void name(String nm)
+								{
+								return 0;
+								}
+								public void name(String nm)
+								{
+								return null;
+								}
+							
+							}
+						
+			2.Inheritance:
+				->Inheritance is a one class inherits the properties and members of another class.
+				->inheritance is achived by using extends keyword.
+				->class which inherits the peoperties of other class is called parent/base class
+				->class which inherited by other class is called child/sub class
+					syntax:
+						class className extends parent class{
+						
+						} 
+				*types:
+					1.Single->inherits the properties from only one class. 
+					2.Multilevel->inherits the properties from multiple class. 
+					3.Multiple->single subclass inherits multiple parent.
+					4.hierarchial
+					5.hybrid->combination of single and multilevel inheritance.
+						
+								
+								
+			3.Encapsulation:Hiding some datas and shows only required data.
+				
+			4.Abstraction:
+				->abstraction only tell what to do not how to do.
+				->its a using the funtions of class without any knowledge of that class.
+				
+				
+8.Program:to count number of char in a given String?
+	by using StringClass  length(); Method.
+	
+	eg:
+		class hello{
+		String name="Jayanth";
+		
+		}
+		class helloRunner{
+		
+		public static void main(String[] args)
+		
+		system.out.println(name.length());
+		}
+		
+		
+9.To count number of words in a given scentance?
+		eg:
+		class hello{
+		String name="Jayanth is a good boy";
+		
+		}
+		class helloRunner{
+		
+		public static void main(String[] args)
+		
+		system.out.println(name.split());
+		int numSen=name.split();
+		system.out.println(numSen.length());
+		}
+		
+11.Explain Interface:
+	->interface is a keword.
+	->it links the two systems.
+	->interface is collection of abstract methods.
+	->interface contain private access  and static specifier as defauld.
+	->in interface all are final.
+	
+	Class which implements the interface class must implemts all methods which are declared in interface class.
+	
+12.Explain Exception?
+	->Exception is an event that disturbs the normal flow a program excecution.
+	
+	Exception Types:
+		1.Checked Exception-> checked exception are checked at the  ComplieTime.Compliler will force to handle the  Exception.
+		Eg:filenotfound exception
+			
+		2.Unchecked Exception->Unchecked Exception RunTime Exception.Compliler will force to handle the  Exception at compiletime.These exceptions are only occurs at the runTime after the program is executed.
+		eg:Arithematicexception
+			nullPointerException
+		
+		
+		
