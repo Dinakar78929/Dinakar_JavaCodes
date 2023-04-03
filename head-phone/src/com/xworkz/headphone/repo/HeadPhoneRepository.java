@@ -4,6 +4,6 @@ import com.xworkz.headphone.dto.HeadPhoneDTO;
 
 public interface HeadPhoneRepository {
 	
-	boolean save(HeadPhoneDTO dto);
+	public boolean save(HeadPhoneDTO dto);
 
 }
