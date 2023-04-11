@@ -8,7 +8,10 @@ public interface EducationRepository {
 
 	boolean save(EducationDTO dto);
 
-	boolean isExist(EducationDTO dto);
+	default boolean isExist(EducationDTO dto)
+	{
+		return false;
+	}
 
 	EducationDTO findByCandidateName(String name);
 

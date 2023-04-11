@@ -3,6 +3,7 @@ package com.xworkz.education.service;
 import java.time.LocalDate;
 
 import com.xworkz.education.dto.EducationDTO;
+import com.xworkz.education.exception.DataInvalidException;
 import com.xworkz.education.repo.EducationRepository;
 
 import static com.xworkz.education.util.EducationValidation.*;
@@ -16,7 +17,7 @@ public class EducationServiceImpl implements EducationService {
 	}
 
 	@Override
-	public boolean validateAndSave(EducationDTO dto) {
+	public boolean validateAndSave(EducationDTO dto) throws DataInvalidException {
 		System.out.println("Running validateAndSave Method");
 		if (dto != null) {
 			System.out.println("dto is not null,we can validate");
@@ -100,14 +101,21 @@ public class EducationServiceImpl implements EducationService {
 			if (validFlag(validId, validName, validDegreeName, validPercentage, validUniversity, validStartDate,
 					validEndDate, validBacklog, validStream)) {
 				System.out.println("data are valid we can save the data");
+				if(!this.repo.isExist(dto))
+				{
+				this.repo.save(dto);
 				return true;
+				}
+				else {
+					System.err.println("dto already exists "+dto);
+				}
 			} else {
-				System.err.println("data are ivalid we cannot save the data");
+				System.err.println("data are invalid we cannot save the data");
 			}
 		} else {
 			System.err.println("DTO is null");
 		}
-		return false;
+		throw new DataInvalidException("Data is not correct,enter valid data");
 	}
 
 //	@Override
@@ -117,11 +125,11 @@ public class EducationServiceImpl implements EducationService {
 //	}
 
 	@Override
-	public EducationDTO findByCandidateName(String name) {
+	public EducationDTO findByCandidateName(String name) throws DataInvalidException{
 		if (validString(name)) {
 			return this.repo.findByCandidateName(name);
 		}
-		return null;
+		throw new DataInvalidException("Fill valid data");
 	}
 
 	@Override

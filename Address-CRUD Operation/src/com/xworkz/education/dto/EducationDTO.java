@@ -16,9 +16,6 @@ public class EducationDTO implements Serializable {
 	private boolean backlog;
 	private String stream;
 
-	public EducationDTO() {
-		super();
-	}
 
 	public EducationDTO(int id, String name, String degreeName, double percentage, String university,
 			LocalDate startDate, LocalDate endDate, boolean backlog, String stream) {

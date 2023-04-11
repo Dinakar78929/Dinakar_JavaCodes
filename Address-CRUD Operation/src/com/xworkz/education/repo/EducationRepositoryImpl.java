@@ -14,6 +14,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 		if (this.educationIndex < this.education.length) {
 			education[educationIndex] = dto;
 			System.out.println("saving is correct");
+			educationIndex++;
 			return true;
 		} else {
 			System.err.println("memory is full,saving is not correct");
@@ -28,13 +29,11 @@ public class EducationRepositoryImpl implements EducationRepository {
 			return false;
 		} else {
 			System.out.println("first element is exist");
-			for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
+			for (int educationIndex = 0; educationIndex < this.educationIndex; educationIndex++) {
 				EducationDTO ref = this.education[educationIndex];
 				if (ref.equals(dto)) {
 					System.out.println("dto is exist");
 					return true;
-				} else {
-					System.err.println("dto is not exist");
 				}
 			}
 		}
@@ -45,7 +44,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public EducationDTO findByCandidateName(String name) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name) {
+			if (ref.getName().equals(name)) {
 				System.out.println("dto is found for candidateName");
 				return ref;
 			} else {
@@ -59,7 +58,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public EducationDTO findByCandidateNameAndUniversity(String name, String university) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name && ref.getUniversity() == university) {
+			if (ref.getName().equals(name) && ref.getUniversity().equals(university)) {
 				System.out.println("dto is found for name,university");
 				return ref;
 			} else {
@@ -73,7 +72,8 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public boolean findBacklogByCandidateNameAndDegreeNameAndUniversity(String name, String degree, String university) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName().equals(name) && ref.getDegreeName().equals(degree) && ref.getUniversity().equals(university)) {
+			if (ref.getName().equals(name) && ref.getDegreeName().equals(degree)
+					&& ref.getUniversity().equals(university)) {
 				System.out.println("dto is found for name and degree");
 				return ref.getBacklog();
 			} else {
@@ -87,7 +87,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public EducationDTO findByCandidateNameAndStartDateAndEndDate(String name, LocalDate startDate, LocalDate endDate) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name && ref.getStartDate() == startDate && ref.getEndDate() == endDate) {
+			if (ref.getName().equals(name) && ref.getStartDate().equals(startDate) && ref.getEndDate().equals(endDate)) {
 				System.out.println("dto is found for name and startdate and enddate");
 				return ref;
 			} else {
@@ -102,7 +102,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public double findPercentageByCandidateName(String name) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name) {
+			if (ref.getName().equals(name)) {
 				System.out.println("Percentage is found for candidateName");
 				return ref.getPercentage();
 			} else {
@@ -116,7 +116,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public String findStreamByCandidateNameAndDegreeNameAndUniversity(String name, String degree, String university) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name && ref.getDegreeName() == degree && ref.getUniversity() == university) {
+			if (ref.getName().equals(name) && ref.getDegreeName().equals(degree) && ref.getUniversity().equals(university)) {
 				System.out.println("id is found for candidateName,degree,university");
 				return ref.getStream();
 			} else {
@@ -130,12 +130,11 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public int findidByCandidateNameAndDegreeNameAndUniversity(String name, String degree, String university) {
 		for (int educationIndex = 0; educationIndex < this.education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName().equals(name) && ref.getDegreeName().equals(degree) && ref.getUniversity().equals(university)) {
+			if (ref!=null && ref.getName().equals(name) && ref.getDegreeName().equals(degree)
+					&& ref.getUniversity().equals(university)) {
 				System.out.println("id is found for candidateName,degree,university");
 				return ref.getId();
-			} else {
-				System.err.println("id is notfound for candidateName,degree,university");
-			}
+			} 
 		}
 		return 0;
 	}
@@ -144,7 +143,7 @@ public class EducationRepositoryImpl implements EducationRepository {
 	public String findUniversityByCandidateName(String name) {
 		for (int educationIndex = 0; educationIndex < education.length; educationIndex++) {
 			EducationDTO ref = this.education[educationIndex];
-			if (ref.getName() == name) {
+			if (ref!=null && ref.getName().equals(name)) {
 				System.out.println("University is found for candidateName");
 				return ref.getUniversity();
 			} else {
