@@ -62,6 +62,7 @@ public class SportsCollectionPlayers {
 //		game.add("kabbadi");
 		
 		Collection<String> sports=new ArrayList<String>();
+		System.out.println("-------calling addAll() method-------");
 		sports.addAll(cricket);
 		sports.addAll(footBall);
 		sports.addAll(kabbadi);
@@ -85,6 +86,8 @@ public class SportsCollectionPlayers {
 			System.out.println(sport);
 		}
 		
+		System.out.println("Running toarray to add all ");
+		
 		
 //		System.out.println("Running toArray(T[] a) methods");
 //	
@@ -97,14 +100,17 @@ public class SportsCollectionPlayers {
 //		for (Object sport : arr) {
 //			System.out.println(sport);
 //		}
+		
 		System.out.println("------Running toArray() methods-------");
 		Object[]  arr=cricket.toArray();
+		//String[] array1=cricket.toArray(new String[] {});
 		System.out.println(Arrays.toString(arr));
 		
 		System.out.println("--------Running RemoveAll() Method------");
 		System.out.println("Removed cricket collecions:"+cricket.removeAll(cricket));
 		System.out.println("Removed footBall collecions:"+footBall.removeAll(footBall));
 		System.out.println("Removed kabbadi collecions:"+kabbadi.removeAll(kabbadi));
+		
 		System.out.println("Cricket collection are:"+cricket);
 		System.out.println("footBall collection are:"+footBall);
 		System.out.println("kabbadi collection are:"+kabbadi);
