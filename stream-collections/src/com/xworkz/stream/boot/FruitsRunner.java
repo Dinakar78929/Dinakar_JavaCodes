@@ -2,13 +2,14 @@ package com.xworkz.stream.boot;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class FruitsRunner {
 
 	public static void main(String[] args) {
 
-		Collection<String> fruites = new ArrayList<String>();
+		List<String> fruites = new ArrayList<String>();
 		fruites.add("Apple");
 		fruites.add("Banana");
 		fruites.add("ButterFruit");
@@ -32,26 +33,32 @@ public class FruitsRunner {
 		fruites.add("Hazelnut");
 		fruites.add("Horned");
 		fruites.add("Durian");
-		fruites.add("gooseberry");
+		fruites.add("Gooseberry");
 		fruites.add("Sappota");
 		
-		System.out.println("------------Printning all fruits in UpperCase--------");
-		Collection<String> covertedFruites=new ArrayList<String>();
-		for (String string : fruites) {
-			covertedFruites.add(string.toUpperCase());
-			
-		}
-		for (String string : covertedFruites) {
-			System.out.println(string);
-		}
-		
+//		fruites.sort(String::compareTo);
+//		fruites.stream().sorted().filter((arg1,arg2)->arg1)
+//		fruites.forEach(System.out::println);
+//		System.out.println("11111111111111111111111111111111111111111111111111111111111111");
 //		System.out.println("------------Printning all fruits in UpperCase--------");
-//		fruites.stream().map(ref -> ref.toUpperCase()).collect(Collectors.toList())
-//				.forEach(element -> System.out.println(element));
+//		Collection<String> covertedFruites=new ArrayList<String>();
+//		for (String string : fruites) {
+//			covertedFruites.add(string.toUpperCase());
+//			
+//		}
+//		for (String string : covertedFruites) {
+//			System.out.println(string);
+//		}
+//		System.out.println("---------------------------------------------------");
+//		covertedFruites.forEach(System.out::println);
+		
+		System.out.println("------------Printning all fruits in UpperCase--------");
+		fruites.stream().sorted((r1,r2)->r2.compareTo(r1)).map(String::toUpperCase).collect(Collectors.toList())
+				.forEach(System.out::println);
 
 		System.out.println("------------Printning all fruits less than size 5--------");
 		fruites.stream().filter(ref -> ref.length() < 5).collect(Collectors.toList())
-				.forEach(element -> System.out.println(element));
+		.forEach(element -> System.out.println(element));
 		
 		System.out.println("------------Printning all fruits greater than size 5--------");
 		fruites.stream().filter(ref -> ref.length() > 5).collect(Collectors.toList())

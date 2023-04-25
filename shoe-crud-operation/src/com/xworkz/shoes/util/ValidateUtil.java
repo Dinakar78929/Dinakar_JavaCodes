@@ -32,6 +32,13 @@ public class ValidateUtil {
 		return false;
 	}
 	
+	public static boolean validBoolean(boolean value) {
+		if(value==true) {
+			return true;
+		}
+		return false;
+	}
+	
 	public static boolean validFlag(boolean...flag)
 	{
 		for(int index=0;index<flag.length; index++)

@@ -1,6 +1,11 @@
 package com.xworkz.collections.boot;
 
 import java.security.Provider.Service;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Optional;
 
 import com.xworkz.collections.consts.Type;
@@ -14,7 +19,15 @@ public class SnakeDTORunner {
 
 	public static void main(String[] args) {
 		
+			
 		SnakeDTO snake1=new SnakeDTO(1, "Python", Type.VENOMOUS, "Mysore Zoo");
+		SnakeDTO snake2=new SnakeDTO(2, "Krait", Type.VENOMOUS, "Thumkur");
+		List<SnakeDTO> lists=new ArrayList<>();
+		lists.add(snake1);
+		lists.add(snake2);
+		
+		lists.stream().sorted((arg1,arg2)->arg1.getName().compareTo(arg2.getName())).forEach(System.out::println);
+		System.out.println("------------------------------------------");
 		//SnakeDTO snake2=new SnakeDTO(2, "", null, null)
 		System.out.println(snake1);
 		SnakeRepository repository=new SnakeRepositoryImpl();
