@@ -20,7 +20,7 @@ public class AmbulanceRunner {
 		AmbulanceService service = new AmbulanceServiceImpl(repository);
 
 		boolean save1 = service.validateAndSave(dto1);
-		System.out.println(save1);
+		System.out.println("DTO1 is saved"+save1);
 		boolean save2 = service.validateAndSave(dto2);
 		System.out.println(save2);
 

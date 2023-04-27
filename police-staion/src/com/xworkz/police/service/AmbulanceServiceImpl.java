@@ -8,9 +8,11 @@ import javax.validation.ValidatorFactory;
 
 import com.xworkz.police.dto.AmbulanceDTO;
 import com.xworkz.police.repo.AmbulanceRepository;
+import com.xworkz.police.util.ValidationUtil;
 
 public class AmbulanceServiceImpl implements AmbulanceService {
 	private AmbulanceRepository repo;
+	private ValidationUtil<AmbulanceDTO> validUtil=new ValidationUtil<>();
 
 	public AmbulanceServiceImpl(AmbulanceRepository repo) {
 		this.repo = repo;
@@ -21,18 +23,18 @@ public class AmbulanceServiceImpl implements AmbulanceService {
 
 		if (dto != null) {
 			System.out.println("dto is not null we can save data :" + dto);
-
-			ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-
-			javax.validation.Validator validator = factory.getValidator();
-			Set<ConstraintViolation<AmbulanceDTO>> constraintViolations = validator.validate(dto);
-
-			System.out.println("Total violation :" + constraintViolations.size());
-			constraintViolations.forEach(cv -> System.err.println(cv.getPropertyPath() + "   " + cv.getMessage()));
-			if (constraintViolations != null && constraintViolations.isEmpty()) {
+//
+//			ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+//
+//			javax.validation.Validator validator = factory.getValidator();
+//			Set<ConstraintViolation<AmbulanceDTO>> constraintViolations = validator.validate(dto);
+//
+//			System.out.println("Total violation :" + constraintViolations.size());
+//			constraintViolations.forEach(cv -> System.err.println(cv.getPropertyPath() + "   " + cv.getMessage()));
+			if (!validUtil.validDTO(dto)) 
 				System.out.println("No violation constraints found in dto ");
-				return this.repo.save(dto);
-			}
+				
+			return this.repo.save(dto);
 
 		} else {
 			System.err.println("dto is not null we cannot save data");
