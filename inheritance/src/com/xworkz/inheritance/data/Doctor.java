@@ -3,7 +3,7 @@ package com.xworkz.inheritance.data;
 public class Doctor {
 	
 	
-	public String name;
+	protected String name;
 	public int reg;
 	
 	public Doctor() {

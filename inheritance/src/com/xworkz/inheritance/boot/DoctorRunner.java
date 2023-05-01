@@ -7,11 +7,8 @@ public class DoctorRunner {
 
 	public static void main(String[] args) {
 		
-		Doctor doc= new Doctor("Shivu",67);
-		String nm=doc.name;
-		System.out.println(nm);
-		
-		EyeDoctor doc1=new EyeDoctor(nm, 55, nm);
+		Doctor doc= new EyeDoctor1();
+		doc
 	
 		
 		
