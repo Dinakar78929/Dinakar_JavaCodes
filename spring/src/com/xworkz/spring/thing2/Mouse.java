@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import lombok.Setter;
 import lombok.ToString;
 
 @Component
 @ToString
+@Setter
 public class Mouse {
 
 	private String name;
