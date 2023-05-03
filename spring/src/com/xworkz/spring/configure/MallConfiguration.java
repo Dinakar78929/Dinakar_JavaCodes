@@ -5,14 +5,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import com.xworkz.spring.thing2.Mouse;
+
 @ComponentScan("com.xworkz.spring.configure.MallConfiguration")
 @Configuration
 public class MallConfiguration {
 
 	@Bean
-	public String mallName() {
+	public String MallName() {
 		System.out.println("Running mallName method");
-		return "Orion";
+		return Mouse.name();
 	}
 
 	@Bean

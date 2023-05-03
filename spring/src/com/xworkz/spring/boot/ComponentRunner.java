@@ -13,6 +13,7 @@ import com.xworkz.spring.thing2.Charger;
 import com.xworkz.spring.thing2.CoolingPad;
 import com.xworkz.spring.thing2.EarPhone;
 import com.xworkz.spring.thing2.Employee;
+import com.xworkz.spring.thing2.Institute;
 import com.xworkz.spring.thing2.Mobile;
 import com.xworkz.spring.thing2.Mouse;
 
@@ -20,18 +21,22 @@ public class ComponentRunner {
 
 	public static void main(String[] args) {
 		ApplicationContext spring = new AnnotationConfigApplicationContext(SpringConfigure2.class);
+		
 		System.out.println("No of bean :" + spring.getBeanDefinitionCount());
+		
 		System.out.println("--Beans Names are----");
 		Stream.of(spring.getBeanDefinitionNames()).forEach(System.out::println);
+		
+		
 		System.out.println("----------Running Mouse Component Class------------");
-		System.out.println(spring.getBean(Mouse.class));
+//		System.out.println(spring.getBean(Mouse.class));
 		Mouse ref = spring.getBean(Mouse.class);
 		System.out.println(ref);
-		ref.name();
+//		ref.name();
 
-		ref.setName("Dell");
-		System.out.println(ref);
-//		System.out.println(ref.name());
+		//ref.setName("Dell");
+//		System.out.println(ref);
+		System.out.println(ref.name());
 
 		System.out.println("------------Running Mobile Component Class----------------");
 		Mobile mobile = spring.getBean(Mobile.class);
@@ -74,6 +79,11 @@ public class ComponentRunner {
 		Employee employee=spring.getBean(Employee.class);
 		System.out.println(employee);
 		System.out.println(employee.findId());
+		
+		System.out.println("------------Running Institute Component Class----------------");
+		Institute institute=spring.getBean(Institute.class);
+		System.out.println(institute);
+		System.out.println(institute.findContactPersonName());
 
 	}
 

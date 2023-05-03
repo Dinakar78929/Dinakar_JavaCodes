@@ -34,9 +34,9 @@ public class Mouse {
 		this.yearOfRecive = yearOfRecive;
 	}
 
-	public String name() {
+	public static String name() {
 		System.out.println("calling Mouse name method ");
-		return "HP";
+		return "hp";
 	}
 
 }
