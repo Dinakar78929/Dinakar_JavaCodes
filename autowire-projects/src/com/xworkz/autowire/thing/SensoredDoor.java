@@ -10,13 +10,17 @@ import lombok.ToString;
 
 @Component
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
 public class SensoredDoor {
-	@Autowired
-	@Qualifier("company")
 	private String companyName;
-	@Autowired
 	private Camera camera;
+	@Autowired
+	public SensoredDoor(@Qualifier("company") String companyName, Camera camera) {
+		super();
+		this.companyName = companyName;
+		this.camera = camera;
+	}
+	
+	
 
 }

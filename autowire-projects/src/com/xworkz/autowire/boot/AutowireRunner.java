@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.xworkz.autowire.configure.SpringConfigure;
+import com.xworkz.autowire.thing.Camera;
 import com.xworkz.autowire.thing.EntryFee;
 //import com.xworkz.autowire.thing.Camera;
 //import com.xworkz.autowire.thing.EntryFee;
@@ -31,8 +32,8 @@ public class AutowireRunner {
 //		Guide ref2=spring.getBean(Guide .class);
 //		System.out.println(ref2);
 		
-//		Camera ref1=spring.getBean(Camera.class);
-//		System.out.println(ref1);
+		Camera ref1=spring.getBean(Camera.class);
+		System.out.println(ref1);
 		
 //		SensoredDoor ref1=spring.getBean(SensoredDoor.class);
 //		System.out.println(ref1);
@@ -40,8 +41,8 @@ public class AutowireRunner {
 //		EntryFee ref1=spring.getBean(EntryFee.class);
 //		System.out.println(ref1);
 		
-		Musuem ref1=spring.getBean(Musuem.class);
-		System.out.println(ref1);
+//		Musuem ref1=spring.getBean(Musuem.class);
+//		System.out.println(ref1);
 		
 		
 	}

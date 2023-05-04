@@ -5,13 +5,23 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Component
 @ToString
-@AllArgsConstructor
+@NoArgsConstructor
 public class Guide {
-	private String guideName;
+	private String guider;
 	private Security security;
+	
+	@Autowired
+	public Guide(@Qualifier("guideName") String guider, Security security) {
+		super();
+		this.guider = guider;
+		this.security = security;
+	}
+	
+	
 
 }
